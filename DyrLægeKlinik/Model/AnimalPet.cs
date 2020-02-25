@@ -5,15 +5,15 @@ using System.Data.SqlClient;
 
 namespace DyrLægeKlinik.Model
 {
-    class KæleDyr
+    class AnimalPet
     {
         private int animalId;
         private string animalName;
         private int animalAge;
-        private DyrRace dyrRace;
-        private DyrKøn dyrKøn;
+        private AnimalRace dyrRace;
+        private AnimalSex dyrKøn;
         private SqlConnection conn;
-        public KæleDyr(SqlConnection connection)
+        public AnimalPet(SqlConnection connection)
         {
             conn = connection;
         }
@@ -32,12 +32,12 @@ namespace DyrLægeKlinik.Model
             get;
             set;
         }
-        public DyrRace DyrRace
+        public AnimalRace DyrRace
         {
             get;
             set;
         }
-        public DyrKøn DyrKøn
+        public AnimalSex DyrKøn
         {
             get;
             set;
