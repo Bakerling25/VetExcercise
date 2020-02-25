@@ -5,14 +5,14 @@ using System.Data.SqlClient;
 
 namespace DyrLægeKlinik.Model
 {
-    class AnimalPet
+    class AnimalPet:SuperClass
     {
         private int animalId;
         private string animalName;
         private int animalAge;
         private AnimalRace dyrRace;
         private AnimalSex dyrKøn;
-        private SqlConnection conn;
+        private AnimalOwner animalOwner;
         public AnimalPet(SqlConnection connection)
         {
             conn = connection;
@@ -39,6 +39,11 @@ namespace DyrLægeKlinik.Model
         }
         public AnimalSex DyrKøn
         {
+            get;
+            set;
+        }
+        public AnimalOwner AnimalOwner 
+        { 
             get;
             set;
         }

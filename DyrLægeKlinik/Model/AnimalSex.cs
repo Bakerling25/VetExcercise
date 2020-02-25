@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DyrLægeKlinik.Model
 {
-    class DyrKøn
+    class AnimalSex
     {
         private int dyrKønId;
         private string køn;

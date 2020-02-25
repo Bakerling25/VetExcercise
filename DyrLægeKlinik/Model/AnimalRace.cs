@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace DyrLægeKlinik.Model
 {
-    class DyrRace
+    class AnimalRace
     {
         private int dyrRaceId;
         private string race;
