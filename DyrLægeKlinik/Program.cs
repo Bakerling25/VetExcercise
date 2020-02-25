@@ -8,18 +8,11 @@ namespace DyrLægeKlinik
         static void Main(string[] args)
         {
             
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder()
-            {
-                InitialCatalog = "Vet",
-                UserID = "ThomasTest",
-                Password = "1234",
-                DataSource = "localhost"
-            };
-            SqlConnection connection = new SqlConnection(builder.ConnectionString);
-            Model.KæleDyr kæleDyr = new Model.KæleDyr(connection)
+            
+            Model.KæleDyr kæleDyr = new Model.KæleDyr(ConnectionClass.sqlConnection())
             {
                 AnimalName = "Fiddo",
-                AnimalAge = 12002,
+                AnimalAge = 3,
                 DyrRace = new Model.DyrRace()
                 {
                     Race = "Hund"

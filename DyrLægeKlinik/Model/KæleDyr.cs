@@ -44,14 +44,14 @@ namespace DyrLægeKlinik.Model
         }
         public void Save()
         {
-            string query = "INSERT INTO AnimalPet (Navn, Alder) VALUES " + "('" +  AnimalName + "'," + AnimalAge + ")";
+            string query = "INSERT INTO AnimalPet (Navn, Alder) VALUES " + "('" + AnimalName + "'," + AnimalAge + ")";
             ConnectionClass.Connection(conn, query);
         }
         public void Delete()
         {
-            string query = "Delete from AnimalPet Where Navn =" + "('" + AnimalName + "')"; 
+            string query = "Delete from AnimalPet Where Navn =" + "('" + AnimalName + "')";
             ConnectionClass.Connection(conn, query);
         }
-        
+
     }
 }

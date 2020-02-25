@@ -7,6 +7,7 @@ namespace DyrLægeKlinik
 {
     class ConnectionClass
     {
+        private SqlConnection conn;
         public static void Connection(SqlConnection connection, string query)
         {
             SqlCommand sqlCommand = new SqlCommand(query, connection);
@@ -14,5 +15,18 @@ namespace DyrLægeKlinik
             sqlCommand.ExecuteNonQuery();
             connection.Close();
         }
+        public static SqlConnection sqlConnection()
+        {
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder()
+            {
+                InitialCatalog = "Vet",
+                UserID = "ThomasTest",
+                Password = "1234",
+                DataSource = "localhost"
+            };
+            SqlConnection connection = new SqlConnection(builder.ConnectionString);
+            return connection;
+        }
+       
     }
 }
