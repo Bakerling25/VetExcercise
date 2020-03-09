@@ -20,9 +20,9 @@ namespace DyrLægeKlinik
                 {
                     Køn = "HanKøn"
                 },
-                AnimalOwner = new Model.AnimalOwner()
+                DyrEjer = new Model.AnimalOwner()
                 {
-                    Name = "ThomasTest",
+                    Navn = "ThomasTest",
                     
                 }
                

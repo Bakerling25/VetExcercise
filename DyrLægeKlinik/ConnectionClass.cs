@@ -43,9 +43,9 @@ namespace DyrLægeKlinik
 
             Console.WriteLine(query);
 
-            connection.Open();
-            sqlCommand.ExecuteNonQuery();
-            connection.Close();
+            //connection.Open();
+            //sqlCommand.ExecuteNonQuery();
+            //connection.Close();
         }
    
     }

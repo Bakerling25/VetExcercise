@@ -1,16 +1,40 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DyrLægeKlinik.Model
 {
-    class AnimalOwner
+    class AnimalOwner:ConnectionClass
     {
-        private int animalOwner_ID;
-        private string name;
+        private string tableName = "DyrEjer";
+        private int dyrEjer_ID;
+        private string navn;
         private List<Adresse> adresse_ID;
-        public int AnimalOwner_ID { get; set; }
-        public string Name { get; set; }
-        public List<Adresse> Adresse_ID { get; set; }
+        public int DyrEjer_ID { get; set; }
+        public string Navn
+        { 
+            get;
+            set;
+        }
+        public List<Adresse> Adresse_ID
+        {
+            get;
+            set;
+        }
+        public void Save()
+        {
+            ArrayList values = new ArrayList()
+            {
+                Navn,
+                Adresse_ID
+            };
+            List<string> keys = new List<string>()
+            {
+                "Navn",
+                "Adresse_ID"
+            };
+            ConnectionClass.Insert(tableName, values, keys, conn);
+        }
     }
 }

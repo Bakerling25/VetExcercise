@@ -14,7 +14,7 @@ namespace DyrLægeKlinik.Model
         private int alder;
         private AnimalRace dyrRace;
         private AnimalSex dyrKøn;
-        private AnimalOwner animalOwner;
+        private AnimalOwner dyrEjer;
         public AnimalPet(SqlConnection connection)
         {
             conn = connection;
@@ -44,7 +44,7 @@ namespace DyrLægeKlinik.Model
             get;
             set;
         }
-        public AnimalOwner AnimalOwner 
+        public AnimalOwner DyrEjer 
         { 
             get;
             set;
@@ -54,18 +54,18 @@ namespace DyrLægeKlinik.Model
             ArrayList values = new ArrayList()
             {
                 Navn,
-                Alder
-                //DyrRace,
-                //AnimalOwner,
-                //DyrKøn
+                Alder,
+                DyrRace.DyrRace_Id,
+                DyrEjer.DyrEjer_ID,
+                DyrKøn.DyrKønId
             };
             List<string> keys = new List<string>()
             {
                 "Navn",
-                "Alder"
-                //"DyrRace_ID",
-                //"DyrEjer_ID",
-                //"Køn_ID"
+                "Alder",
+                "DyrRace_ID",
+                "DyrEjer_ID",
+                "Køn_ID"
             };
             ConnectionClass.Insert(tableName, values, keys,conn);
         }
