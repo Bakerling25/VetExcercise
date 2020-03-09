@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace DyrLægeKlinik.Model
 {
-    class AnimalPet:SuperClass
+    class AnimalPet:ConnectionClass
     {
         private int animalId;
         private string animalName;
@@ -47,16 +47,7 @@ namespace DyrLægeKlinik.Model
             get;
             set;
         }
-        public void Save()
-        {
-            string query = "INSERT INTO AnimalPet (Navn, Alder) VALUES " + "('" + AnimalName + "'," + AnimalAge + ")";
-            ConnectionClass.Connection(conn, query);
-        }
-        public void Delete()
-        {
-            string query = "Delete from AnimalPet Where Navn =" + "('" + AnimalName + "')";
-            ConnectionClass.Connection(conn, query);
-        }
+       
 
     }
 }

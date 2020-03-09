@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DyrLægeKlinik.Model
 {
-    class Behandling:SuperClass
+    class Behandling:ConnectionClass
     {
         private int behandling_ID;
         private DateTime dateOfProcedure;
@@ -15,13 +15,21 @@ namespace DyrLægeKlinik.Model
             get;
             set;
         }
-        public DateTime DateOfProcedure { get; set; }
-        public List<BehandlingsType> BehandlingsType_ID { get; set; }
-        public List<AnimalPet> KæleDyr_ID { get; set; }
-        public void View()
-        {
-            string query = "Placeholder";
-            ConnectionClass.Connection(conn, query);
+        public DateTime DateOfProcedure
+        { 
+            get;
+            set;
         }
+        public List<BehandlingsType> BehandlingsType_ID
+        { 
+            get;
+            set;
+        }
+        public List<AnimalPet> KæleDyr_ID
+        { 
+            get;
+            set;
+        }
+        
     }
 }

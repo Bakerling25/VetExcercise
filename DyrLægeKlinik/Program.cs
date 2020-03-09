@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace DyrLægeKlinik
@@ -7,11 +8,9 @@ namespace DyrLægeKlinik
     {
         static void Main(string[] args)
         {
-            
-            
             Model.AnimalPet kæleDyr = new Model.AnimalPet(ConnectionClass.sqlConnection())
             {
-                AnimalName = "Fiddo",
+                AnimalName = "DyreNavn - 12000",
                 AnimalAge = 3,
                 DyrRace = new Model.AnimalRace()
                 {
@@ -28,8 +27,9 @@ namespace DyrLægeKlinik
                 }
                
             };
-            kæleDyr.Save();
-            //kæleDyr.Delete();
+
+            kæleDyr.Save(kæleDyr);
+            //kæleDyr.Delete(kæleDyr);
             Console.ReadLine();
         }
     }
