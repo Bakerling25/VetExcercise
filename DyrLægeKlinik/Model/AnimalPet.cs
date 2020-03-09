@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
@@ -7,9 +8,10 @@ namespace DyrLægeKlinik.Model
 {
     class AnimalPet:ConnectionClass
     {
+        private string tableName = "AnimalPet";
         private int animalId;
-        private string animalName;
-        private int animalAge;
+        private string navn;
+        private int alder;
         private AnimalRace dyrRace;
         private AnimalSex dyrKøn;
         private AnimalOwner animalOwner;
@@ -22,12 +24,12 @@ namespace DyrLægeKlinik.Model
             get;
             set;
         }
-        public string AnimalName
+        public string Navn
         {
             get;
             set;
         }
-        public int AnimalAge
+        public int Alder
         {
             get;
             set;
@@ -46,6 +48,26 @@ namespace DyrLægeKlinik.Model
         { 
             get;
             set;
+        }
+        public void Save()
+        {
+            ArrayList values = new ArrayList()
+            {
+                Navn,
+                Alder
+                //DyrRace,
+                //AnimalOwner,
+                //DyrKøn
+            };
+            List<string> keys = new List<string>()
+            {
+                "Navn",
+                "Alder"
+                //"DyrRace_ID",
+                //"DyrEjer_ID",
+                //"Køn_ID"
+            };
+            ConnectionClass.Insert(tableName, values, keys,conn);
         }
        
 

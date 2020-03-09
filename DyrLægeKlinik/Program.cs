@@ -10,8 +10,8 @@ namespace DyrLægeKlinik
         {
             Model.AnimalPet kæleDyr = new Model.AnimalPet(ConnectionClass.sqlConnection())
             {
-                AnimalName = "DyreNavn - 12000",
-                AnimalAge = 3,
+                Navn = "Test - Test",
+                Alder = 3,
                 DyrRace = new Model.AnimalRace()
                 {
                     Race = "Hund"
@@ -28,7 +28,7 @@ namespace DyrLægeKlinik
                
             };
 
-            kæleDyr.Save(kæleDyr);
+            kæleDyr.Save();
             //kæleDyr.Delete(kæleDyr);
             Console.ReadLine();
         }
